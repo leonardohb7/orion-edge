@@ -1,0 +1,319 @@
+{
+  "version": 1,
+  "author": "Leonardo Henrique Basseti - RM 574039",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard-half",
+      "id": "bb1",
+      "top": -120,
+      "left": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 240,
+      "left": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultra",
+      "top": -290,
+      "left": 200,
+      "attrs": {
+        "distance": "100"
+      }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir",
+      "top": -300,
+      "left": 360,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -320,
+      "left": 520,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot",
+      "top": -300,
+      "left": 660,
+      "attrs": {
+        "value": "512"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "sw",
+      "top": 250,
+      "left": 600,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_g",
+      "top": 100,
+      "left": 760,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_y",
+      "top": 100,
+      "left": 820,
+      "attrs": {
+        "color": "yellow"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_b",
+      "top": 100,
+      "left": 880,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 180,
+      "left": 750,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 180,
+      "left": 810,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 180,
+      "left": 870,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buz",
+      "top": 400,
+      "left": 760,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo",
+      "top": 400,
+      "left": 880,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "bb1:tp.1",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "bb1:tn.1",
+      "black",
+      []
+    ],
+    [
+      "ultra:VCC",
+      "bb1:tp.3",
+      "red",
+      []
+    ],
+    [
+      "ultra:GND",
+      "bb1:tn.3",
+      "black",
+      []
+    ],
+    [
+      "ultra:TRIG",
+      "uno:9",
+      "green",
+      []
+    ],
+    [
+      "ultra:ECHO",
+      "uno:10",
+      "blue",
+      []
+    ],
+    [
+      "pir:VCC",
+      "bb1:tp.5",
+      "red",
+      []
+    ],
+    [
+      "pir:GND",
+      "bb1:tn.5",
+      "black",
+      []
+    ],
+    [
+      "pir:OUT",
+      "uno:2",
+      "green",
+      []
+    ],
+    [
+      "dht:VCC",
+      "bb1:tp.7",
+      "red",
+      []
+    ],
+    [
+      "dht:GND",
+      "bb1:tn.7",
+      "black",
+      []
+    ],
+    [
+      "dht:SDA",
+      "uno:4",
+      "green",
+      []
+    ],
+    [
+      "pot:VCC",
+      "bb1:tp.9",
+      "red",
+      []
+    ],
+    [
+      "pot:GND",
+      "bb1:tn.9",
+      "black",
+      []
+    ],
+    [
+      "pot:SIG",
+      "uno:A0",
+      "blue",
+      []
+    ],
+    [
+      "servo:V+",
+      "bb1:tp.11",
+      "red",
+      []
+    ],
+    [
+      "servo:GND",
+      "bb1:tn.11",
+      "black",
+      []
+    ],
+    [
+      "servo:PWM",
+      "uno:11",
+      "green",
+      []
+    ],
+    [
+      "buz:1",
+      "uno:3",
+      "purple",
+      []
+    ],
+    [
+      "buz:2",
+      "bb1:tn.15",
+      "black",
+      []
+    ],
+    [
+      "uno:5",
+      "r1:1",
+      "green",
+      []
+    ],
+    [
+      "r1:2",
+      "led_g:A",
+      "green",
+      []
+    ],
+    [
+      "led_g:C",
+      "bb1:tn.17",
+      "black",
+      []
+    ],
+    [
+      "uno:6",
+      "r2:1",
+      "gold",
+      []
+    ],
+    [
+      "r2:2",
+      "led_y:A",
+      "gold",
+      []
+    ],
+    [
+      "led_y:C",
+      "bb1:tn.19",
+      "black",
+      []
+    ],
+    [
+      "uno:8",
+      "r3:1",
+      "blue",
+      []
+    ],
+    [
+      "r3:2",
+      "led_b:A",
+      "blue",
+      []
+    ],
+    [
+      "led_b:C",
+      "bb1:tn.21",
+      "black",
+      []
+    ],
+    [
+      "uno:7",
+      "sw:1.l",
+      "green",
+      []
+    ],
+    [
+      "sw:2.l",
+      "bb1:tn.13",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
